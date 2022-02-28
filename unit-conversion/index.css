@@ -21,6 +21,7 @@ main {
   padding: 35px;
   text-align: center;
   background: linear-gradient(246.26deg, #585dfe 0%, #fb3796 100%);
+  border-radius: 8px 8px 0 0;
 }
 
 .main--title {
@@ -31,10 +32,25 @@ main {
   letter-spacing: -0.05em;
 }
 
-#main--input {
+#main--number {
   margin: 0;
   font-size: 98px;
   font-weight: 800;
+}
+
+#main--input {
+  font-family: inherit;
+  text-align: center;
+  background: #1f2937;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  width: 55px;
+  height: 30px;
+}
+
+#main--input:focus {
+  outline: none;
 }
 
 /* Results */
@@ -43,6 +59,7 @@ main {
   padding: 38px 0;
   background: #1f2937;
   text-align: center;
+  border-radius: 0 0 8px 8px;
 }
 
 .results--section {

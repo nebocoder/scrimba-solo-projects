@@ -1,9 +1,18 @@
+const mainNumber = document.getElementById('main--number');
 const mainInput = document.getElementById('main--input');
 const resultLength = document.getElementById('results--length');
 const resultVolume = document.getElementById('results--volume');
 const resultMass = document.getElementById('results--mass');
 
-const startingNumber = 20;
+const startingNumber = 10;
+
+mainInput.addEventListener('input', () => {
+  if (mainInput.value) {
+    render(mainInput.value);
+  } else {
+    render(0);
+  }
+});
 
 function getLength(input) {
   return `
@@ -24,7 +33,7 @@ function getMass(input) {
 }
 
 function render(input) {
-  mainInput.textContent = input;
+  mainNumber.textContent = input;
   resultLength.textContent = getLength(input);
   resultVolume.textContent = getVolume(input);
   resultMass.textContent = getMass(input);
