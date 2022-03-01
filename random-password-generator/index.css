@@ -63,7 +63,7 @@ body {
   transition: transform 150ms;
 }
 
-.btn:hover {
+.hero > .btn:hover {
   transform: scale(0.97);
 }
 
@@ -80,6 +80,31 @@ body {
   gap: 28px;
 }
 
+.password {
+  position: relative;
+}
+
+.copy-btn {
+  width: 55px;
+  height: 100%;
+  display: inline;
+  position: absolute;
+  right: 0;
+  border-radius: 0 6px 6px 0;
+  cursor: grab;
+}
+
+.copy-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.copy-icon {
+  filter: invert();
+  width: 30px;
+  transform: translate(-15%, 10%);
+}
+
 .results--result {
   font-family: inherit;
   font-weight: 500;
@@ -90,12 +115,18 @@ body {
   background: #273549;
   border-radius: 6px;
   border: none;
-  padding: 8px 0;
+  padding: 8px 30px;
+  width: 100%;
+  text-align: left;
+}
+
+.results--result:focus {
+  outline: none;
 }
 
 .results--result::placeholder {
   background: url('images/dots.svg');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 65px, center;
   background-size: 28px;
 }

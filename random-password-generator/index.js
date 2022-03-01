@@ -1,5 +1,6 @@
 const generateBtn = document.getElementById('generate-btn');
 const passwordResults = document.querySelectorAll('.results--result');
+const copyBtn = document.querySelectorAll('.copy-btn');
 
 // Characters
 const lowerCase = 'abcdefghijklmnopqrstuvwxyz'.split('');
@@ -24,4 +25,20 @@ generateBtn.addEventListener('click', () => {
   passwordResults.forEach((password) => {
     password.value = generatePassword(combinedArray, 15);
   });
+
+  copyBtn.forEach((button) => {
+    if (button.disabled) {
+      button.disabled = false;
+    }
+  });
 });
+
+// Copy to clipboard
+for (let i = 0; i < copyBtn.length; i++) {
+  copyBtn[i].addEventListener('click', () => {
+    let password = document.getElementById(`password${i}`);
+    navigator.clipboard.writeText(password.value);
+
+    copyBtn[i].disabled = true;
+  });
+}
