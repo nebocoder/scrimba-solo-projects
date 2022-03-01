@@ -92,3 +92,10 @@ body {
   border: none;
   padding: 8px 0;
 }
+
+.results--result::placeholder {
+  background: url('images/dots.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px;
+}
