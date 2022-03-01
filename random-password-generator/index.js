@@ -1,12 +1,12 @@
 const generateBtn = document.getElementById('generate-btn');
-const passwordResults = document.querySelectorAll('.results--result');
+const passwordResults = document.querySelectorAll('.results-result');
 const copyBtn = document.querySelectorAll('.copy-btn');
 
 // Characters
 const lowerCase = 'abcdefghijklmnopqrstuvwxyz'.split('');
 const upperCase = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
 const numbers = '0123456789'.split('');
-const characters = '!@#$%^&*()_+|<>?'.split('');
+const characters = '!@#$%^&*()_+-|<>?'.split('');
 const combinedArray = lowerCase.concat(upperCase, numbers, characters);
 
 // Fischer-Yates shuffle

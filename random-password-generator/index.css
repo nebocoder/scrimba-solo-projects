@@ -24,7 +24,7 @@ body {
   border-bottom: 1px solid #2f3e53;
 }
 
-.hero--title {
+.hero-title {
   font-family: 'Karla', sans-serif;
   font-weight: 800;
   font-size: 40px;
@@ -33,12 +33,12 @@ body {
   margin-bottom: 12px;
 }
 
-.hero--title__span {
+.hero-title-span {
   color: #4adf86;
   display: block;
 }
 
-.hero--subtitle {
+.hero-subtitle {
   color: #d5d4d8;
   font-weight: normal;
   font-size: 20px;
@@ -67,7 +67,7 @@ body {
   transform: scale(0.97);
 }
 
-.hero--button__icon {
+.hero-button-icon {
   margin-right: 15px;
   width: 15px;
 }
@@ -105,7 +105,7 @@ body {
   transform: translate(-15%, 10%);
 }
 
-.results--result {
+.results-result {
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
@@ -120,11 +120,11 @@ body {
   text-align: left;
 }
 
-.results--result:focus {
+.results-result:focus {
   outline: none;
 }
 
-.results--result::placeholder {
+.results-result::placeholder {
   background: url('images/dots.svg');
   background-repeat: no-repeat;
   background-position: 65px, center;
