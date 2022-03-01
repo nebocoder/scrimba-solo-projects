@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>Random Password Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Hero -->
+      <section class="hero">
+        <h1 class="hero-title">
+          Generate a <span class="hero-title-span">random password</span>
+        </h1>
+        <p class="hero-subtitle">Never use an insecure password again.</p>
+        <button id="generate-btn" class="btn">
+          <img src="images/lightning.svg" class="hero-button-icon" />
+          Generate passwords
+        </button>
+      </section>
+
+      <!-- Results -->
+      <section class="results">
+        <div class="password">
+          <input
+            type="text"
+            id="password0"
+            class="results-result"
+            disabled
+            placeholder=" "
+          />
+          <button class="btn copy-btn" disabled>
+            <img src="images/copy.svg" class="copy-icon" />
+          </button>
+        </div>
+        <div class="password">
+          <input
+            type="text"
+            id="password1"
+            class="results-result"
+            disabled
+            placeholder=" "
+          />
+          <button class="btn copy-btn" disabled>
+            <img src="images/copy.svg" class="copy-icon" />
+          </button>
+        </div>
+        <div class="password">
+          <input
+            type="text"
+            id="password2"
+            class="results-result"
+            disabled
+            placeholder=" "
+          />
+          <button class="btn copy-btn" disabled>
+            <img src="images/copy.svg" class="copy-icon" />
+          </button>
+        </div>
+        <div class="password">
+          <input
+            type="text"
+            id="password3"
+            class="results-result"
+            disabled
+            placeholder=" "
+          />
+          <button class="btn copy-btn" disabled>
+            <img src="images/copy.svg" class="copy-icon" />
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
