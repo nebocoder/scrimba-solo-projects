@@ -17,6 +17,8 @@ body {
   margin: 118px auto 0;
 }
 
+/* Hero */
+
 .hero {
   margin-bottom: 38px;
   border-bottom: 1px solid #2f3e53;
@@ -68,4 +70,25 @@ body {
 .hero--button__icon {
   margin-right: 15px;
   width: 15px;
+}
+
+/* Results */
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 28px;
+}
+
+.results--result {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  text-align: center;
+  color: #55f991;
+  background: #273549;
+  border-radius: 6px;
+  border: none;
+  padding: 8px 0;
 }
