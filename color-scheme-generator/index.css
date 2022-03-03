@@ -1,0 +1,103 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+nav {
+  background: #1f2937;
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.15);
+  padding: 16px 20px 24px;
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 0 0 12px 12px;
+}
+
+#color--input {
+  width: 60px;
+  height: 40px;
+  cursor: pointer;
+}
+
+#mode--input {
+  width: 312px;
+  background: #1f293a;
+  border: 1px solid #d1d5db;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #d5d4d8;
+  margin: 0 16px;
+  padding-left: 13px;
+  cursor: pointer;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+}
+
+#mode--input:focus {
+  outline: none;
+}
+
+#mode--input option {
+  padding: 8px;
+}
+
+#mode--input.mySelectArrow {
+  color: red;
+  padding: 0 10px;
+}
+
+nav button {
+  background: #3d4b60;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  border: none;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 200ms;
+}
+
+nav button:hover {
+  background: #56667c;
+}
+
+main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  display: flex;
+}
+
+.color--display {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+}
+
+.color--display p {
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0 0 1px #000, 0 0 5px #000;
+}
