@@ -87,4 +87,16 @@ main {
 
 .color--display {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+}
+
+.color--display p {
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0 0 1px #000, 0 0 5px #000;
 }
