@@ -15,11 +15,10 @@ generateColors();
 button.addEventListener('click', generateColors);
 
 async function generateColors() {
-  const color = colorInput.value.slice(1);
-  const mode = modeInput.value;
-
   const response = await fetch(
-    `https://www.thecolorapi.com/scheme?hex=${color}&mode=${mode}`
+    `https://www.thecolorapi.com/scheme?hex=${colorInput.value.slice(1)}&mode=${
+      modeInput.value
+    }`
   );
   const data = await response.json();
 
