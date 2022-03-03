@@ -24,6 +24,7 @@ nav {
 #color--input {
   width: 60px;
   height: 40px;
+  cursor: pointer;
 }
 
 #mode--input {
@@ -36,7 +37,7 @@ nav {
   font-size: 16px;
   line-height: 24px;
   color: #d5d4d8;
-  margin: 0 13px;
+  margin: 0 16px;
   padding-left: 13px;
   cursor: pointer;
   -moz-appearance: none; /* Firefox */
