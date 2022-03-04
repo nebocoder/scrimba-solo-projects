@@ -110,7 +110,19 @@ body {
 
 .main--section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: calc(100vh - 189px);
+}
+
+.main--section__image {
+  margin-bottom: 9px;
+}
+
+.main--section__title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #dfdddd;
 }
