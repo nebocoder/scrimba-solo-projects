@@ -5,3 +5,38 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Nav section */
+
+.nav--section {
+  margin: 0 auto;
+  padding: 80px 45px 85px;
+  width: 550px;
+  background-color: #000;
+  background-image: url('images/nav-bg.png');
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 20px 20px;
+}
+
+.nav--section__current {
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 24px;
+  letter-spacing: -0.045em;
+}
+
+.nav--section__option {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  color: #ffffff;
+  text-decoration: none;
+}
