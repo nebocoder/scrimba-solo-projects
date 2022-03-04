@@ -8,6 +8,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  position: relative;
 }
 
 /* Nav section */
@@ -52,8 +53,9 @@ body {
   margin: 0 auto;
   width: 462px;
   display: flex;
-  position: relative;
-  transform: translateY(-50%);
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .search--section__icon {
@@ -102,4 +104,13 @@ body {
 
 .search--section__button:hover {
   background: rgb(243, 243, 243);
+}
+
+/* Main section */
+
+.main--section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 189px);
 }
