@@ -194,6 +194,15 @@ body {
   align-items: center;
 }
 
+.movie--title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.movie--title a:hover {
+  text-decoration: underline;
+}
+
 .movie--title h3 {
   font-weight: 500;
   font-size: 18px;

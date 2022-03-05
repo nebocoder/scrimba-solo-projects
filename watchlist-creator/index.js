@@ -33,7 +33,9 @@ function getMovieHtml(data) {
       />
       <div class="movie--info">
         <div class="movie--title">
-          <h3>${data.Title}</h3>
+          <a href="https://www.imdb.com/title/${data.imdbID}/" target="_blank">
+            <h3>${data.Title}</h3>
+          </a>
           <img src="images/star.png" />
           <p>${data.imdbRating}</p>
         </div>
