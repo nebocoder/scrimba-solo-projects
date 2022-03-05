@@ -25,11 +25,15 @@ async function getMovieInfo(movieId) {
 }
 
 function getMovieHtml(data) {
-  const plotTruncated = `${
-    data.Plot.substr(0, 125) + '...'
-  } <a href="https://www.imdb.com/title/${data.imdbID}/" target="_blank">
-          Read more
-          </a>`;
+  const plotTruncated = `
+    ${data.Plot.substr(0, 125) + '...'}
+    <a href="https://www.imdb.com/title/${data.imdbID}/" target="_blank">
+      Read more
+    </a>`;
+
+  const genreTruncated = `
+    ${data.Genre.split(', ').slice(0, 3).join(', ')}
+  `;
 
   return `
     <div class="movie--card">
@@ -47,7 +51,7 @@ function getMovieHtml(data) {
         </div>
         <div class="movie--extra">
           <p class="movie--length">${data.Runtime}</p>
-          <p class="movie--genre">${data.Genre}</p>
+          <p class="movie--genre">${genreTruncated}</p>
           <a href="#" class="watchlist">
             <img class="plus--icon" src="images/plus.png" />
             <p class="watchlist--action">Watchlist</p>
