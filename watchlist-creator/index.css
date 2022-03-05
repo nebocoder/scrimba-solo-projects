@@ -53,7 +53,7 @@ body {
   margin: 0 auto;
   width: 462px;
   display: flex;
-  position: fixed;
+  position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -143,8 +143,8 @@ body {
   opacity: 0.75;
 }
 
-.main--reminder__image {
-  margin-right: 8px;
+.plus--icon {
+  margin-right: 5px;
   width: 18px;
   height: 18px;
 }
@@ -159,4 +159,86 @@ body {
 .main--reminder__text a {
   text-decoration: none;
   color: inherit;
+}
+
+/* Card */
+
+.movie--card {
+  display: flex;
+  width: 462px;
+  height: 148px;
+  margin-bottom: 42px;
+}
+
+.movie--poster {
+  width: 99px;
+  height: 148px;
+  margin-right: 21px;
+}
+
+.movie--info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.movie--title {
+  display: flex;
+  align-items: center;
+}
+
+.movie--title h3 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  margin-right: 8px;
+}
+
+.movie--title img {
+  width: 15px;
+  height: 15px;
+  margin-right: 4px;
+}
+
+.movie--title p {
+  font-size: 12px;
+}
+
+.movie--extra {
+  display: flex;
+  padding: 11px 0 9px;
+  align-items: center;
+}
+
+.movie--length,
+.movie--genre,
+.watchlist--action {
+  font-size: 12px;
+  line-height: 20px;
+  color: #111827;
+}
+
+.movie--length {
+  margin-right: 19px;
+}
+
+.movie--genre {
+  margin-right: 30px;
+}
+
+.watchlist {
+  display: flex;
+  text-decoration: none;
+  transition: opacity 100ms;
+}
+
+.watchlist:hover {
+  opacity: 0.75;
+}
+
+.movie--summary {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #6b7280;
 }
