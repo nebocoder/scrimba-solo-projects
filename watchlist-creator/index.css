@@ -199,7 +199,8 @@ body {
   color: inherit;
 }
 
-.movie--title a:hover {
+.movie--title a:hover,
+.movie--summary a:hover {
   text-decoration: underline;
 }
 
@@ -257,4 +258,9 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #6b7280;
+}
+
+.movie--summary a {
+  text-decoration: none;
+  color: #272727;
 }

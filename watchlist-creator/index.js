@@ -25,6 +25,12 @@ async function getMovieInfo(movieId) {
 }
 
 function getMovieHtml(data) {
+  const plotTruncated = `${
+    data.Plot.substr(0, 125) + '...'
+  } <a href="https://www.imdb.com/title/${data.imdbID}/" target="_blank">
+          Read more
+          </a>`;
+
   return `
     <div class="movie--card">
       <img
@@ -47,7 +53,7 @@ function getMovieHtml(data) {
             <p class="watchlist--action">Watchlist</p>
           </a>
         </div>
-        <p class="movie--summary">${data.Plot}</p>
+        <p class="movie--summary">${plotTruncated}</p>
       </div>
     </div>
   `;
