@@ -8,6 +8,8 @@ async function getMovieIds() {
   );
   const data = await response.json();
 
+  search.value = '';
+
   return data.Search.map((movie) => {
     return movie.imdbID;
   });
@@ -49,6 +51,23 @@ function getMovieHtml(data) {
   `;
 }
 
-async function renderMoviesHtml() {}
+async function renderMoviesHtml() {
+  const movieIdArray = await getMovieIds();
+  const totalHtml = [];
+
+  if (movieIdArray.length) {
+    main.innerHTML = `
+    <h3 class="main--section__title">Loading...</h3>
+    `;
+    main.style.justifyContent = `flex-start`;
+    main.style.paddingTop = '63px';
+
+    for (let i = 0; i < movieIdArray.length; i++) {
+      totalHtml.push(await getMovieInfo(movieIdArray[i]));
+    }
+
+    main.innerHTML = totalHtml.join('');
+  }
+}
 
 searchButton.addEventListener('click', renderMoviesHtml);
