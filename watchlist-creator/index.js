@@ -97,19 +97,18 @@ async function renderMoviesHtml() {
   const movieIdArray = await getMovieIds();
   const totalHtml = [];
 
-  if (movieIdArray.length) {
-    main.innerHTML = `
+  movieIdArray.length;
+  main.innerHTML = `
     <h3 class="main--section__title">Loading...</h3>
     `;
-    main.style.justifyContent = `flex-start`;
-    main.style.paddingTop = '63px';
+  main.style.justifyContent = `flex-start`;
+  main.style.paddingTop = '63px';
 
-    for (let i = 0; i < movieIdArray.length; i++) {
-      totalHtml.push(await getMovieInfo(movieIdArray[i]));
-    }
-
-    main.innerHTML = totalHtml.join('');
+  for (let i = 0; i < movieIdArray.length; i++) {
+    totalHtml.push(await getMovieInfo(movieIdArray[i]));
   }
+
+  main.innerHTML = totalHtml.join('');
 }
 
 searchButton.addEventListener('click', renderMoviesHtml);
