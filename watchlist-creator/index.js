@@ -10,9 +10,17 @@ async function getMovieIds() {
 
   search.value = '';
 
-  return data.Search.map((movie) => {
-    return movie.imdbID;
-  });
+  if (data.Response === 'True') {
+    return data.Search.map((movie) => {
+      return movie.imdbID;
+    });
+  } else {
+    main.innerHTML = `
+    <h3 class="main--section__title">
+      Unable to find what you’re looking for. Please try another search.
+    </h3>
+    `;
+  }
 }
 
 async function getMovieInfo(movieId) {
@@ -25,11 +33,17 @@ async function getMovieInfo(movieId) {
 }
 
 function getMovieHtml(data) {
-  const plotTruncated = `
-    ${data.Plot.substr(0, 125) + '...'}
-    <a href="https://www.imdb.com/title/${data.imdbID}/" target="_blank">
-      Read more
-    </a>`;
+  let plotTruncated = '';
+
+  if (data.Plot !== 'N/A') {
+    plotTruncated = `
+      ${data.Plot.substr(0, 125)}
+      <a href="https://www.imdb.com/title/${data.imdbID}/" target="_blank">
+        Read more
+      </a>`;
+  } else {
+    plotTruncated = 'No movie summary available.';
+  }
 
   const genreTruncated = `
     ${data.Genre.split(', ').slice(0, 3).join(', ')}
@@ -44,7 +58,7 @@ function getMovieHtml(data) {
       <div class="movie--info">
         <div class="movie--title">
           <a href="https://www.imdb.com/title/${data.imdbID}/" target="_blank">
-            <h3>${data.Title}</h3>
+            <h3>${data.Title} (${data.Year})</h3>
           </a>
           <img src="images/star.png" />
           <p>${data.imdbRating}</p>
