@@ -49,14 +49,16 @@ function getMovieHtml(data) {
     titleTruncated = data.Title;
   }
 
-  if (data.Plot !== 'N/A') {
+  if (data.Plot === 'N/A') {
+    plotTruncated = 'No movie summary available.';
+  } else if (data.Plot.length > 125) {
     plotTruncated = `
       ${data.Plot.substr(0, 125)}
       <a href="https://www.imdb.com/title/${data.imdbID}/" target="_blank">
         Read more
       </a>`;
   } else {
-    plotTruncated = 'No movie summary available.';
+    plotTruncated = data.Plot;
   }
 
   const genreTruncated = `
