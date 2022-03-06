@@ -34,6 +34,20 @@ async function getMovieInfo(movieId) {
 
 function getMovieHtml(data) {
   let plotTruncated = '';
+  let posterSource = '';
+  let titleTruncated = '';
+
+  if (data.Poster !== 'N/A') {
+    posterSource = data.Poster;
+  } else {
+    posterSource = 'images/poster.png';
+  }
+
+  if (data.Title.length > 23) {
+    titleTruncated = `${data.Title.substr(0, 23)}...`;
+  } else {
+    titleTruncated = data.Title;
+  }
 
   if (data.Plot !== 'N/A') {
     plotTruncated = `
@@ -53,12 +67,12 @@ function getMovieHtml(data) {
     <div class="movie--card">
       <img
         class="movie--poster"
-        src="${data.Poster}"
+        src="${posterSource}"
       />
       <div class="movie--info">
         <div class="movie--title">
           <a href="https://www.imdb.com/title/${data.imdbID}/" target="_blank">
-            <h3>${data.Title} (${data.Year})</h3>
+            <h3>${titleTruncated} (${data.Year})</h3>
           </a>
           <img src="images/star.png" />
           <p>${data.imdbRating}</p>
@@ -97,3 +111,9 @@ async function renderMoviesHtml() {
 }
 
 searchButton.addEventListener('click', renderMoviesHtml);
+search.addEventListener('keyup', function (event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    searchButton.click();
+  }
+});
