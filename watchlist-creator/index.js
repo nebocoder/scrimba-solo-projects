@@ -15,11 +15,7 @@ async function getMovieIds() {
       return movie.imdbID;
     });
   } else {
-    main.innerHTML = `
-    <h3 class="main--section__title">
-      Unable to find what you’re looking for. Please try another search.
-    </h3>
-    `;
+    return [];
   }
 }
 
@@ -97,18 +93,25 @@ async function renderMoviesHtml() {
   const movieIdArray = await getMovieIds();
   const totalHtml = [];
 
-  movieIdArray.length;
   main.innerHTML = `
     <h3 class="main--section__title">Loading...</h3>
     `;
-  main.style.justifyContent = `flex-start`;
-  main.style.paddingTop = '63px';
 
   for (let i = 0; i < movieIdArray.length; i++) {
     totalHtml.push(await getMovieInfo(movieIdArray[i]));
   }
 
-  main.innerHTML = totalHtml.join('');
+  if (totalHtml.length) {
+    main.style.justifyContent = `flex-start`;
+    main.style.paddingTop = '63px';
+    main.innerHTML = totalHtml.join('');
+  } else {
+    main.innerHTML = `
+    <h3 class="main--section__title">
+      Unable to find what you’re looking for. Please try another search.
+    </h3>
+    `;
+  }
 }
 
 searchButton.addEventListener('click', renderMoviesHtml);
