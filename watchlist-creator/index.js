@@ -106,6 +106,8 @@ async function renderMoviesHtml() {
     main.style.paddingTop = '63px';
     main.innerHTML = totalHtml.join('');
   } else {
+    main.style.justifyContent = `center`;
+    main.style.paddingTop = '0';
     main.innerHTML = `
     <h3 class="main--section__title">
       Unable to find what you’re looking for. Please try another search.
