@@ -1,6 +1,6 @@
 const main = document.querySelector('.main--section');
 
-let savedIds = [];
+let savedIds = JSON.parse(localStorage.getItem('savedIds')) || [];
 
 async function getMovieInfo(movieId) {
   const response = await fetch(
