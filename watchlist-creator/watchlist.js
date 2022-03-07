@@ -1,23 +1,6 @@
-const search = document.querySelector('.search--section__input');
-const searchButton = document.querySelector('.search--section__button');
 const main = document.querySelector('.main--section');
 
-async function getMovieIds() {
-  const response = await fetch(
-    `http://www.omdbapi.com/?apikey=${config.key}&s=${search.value}`
-  );
-  const data = await response.json();
-
-  search.value = '';
-
-  if (data.Response === 'True') {
-    return data.Search.map((movie) => {
-      return movie.imdbID;
-    });
-  } else {
-    return [];
-  }
-}
+let savedIds = [];
 
 async function getMovieInfo(movieId) {
   const response = await fetch(
@@ -79,8 +62,8 @@ function getMovieHtml(data) {
           <p class="movie--length">${data.Runtime}</p>
           <p class="movie--genre">${genreTruncated}</p>
           <a href="javascript:;" class="watchlist">
-            <img class="plus--icon" src="images/plus.png" />
-            <p class="watchlist--action">Watchlist</p>
+            <img class="plus--icon" src="images/minus.png" />
+            <p class="watchlist--action">Remove</p>
           </a>
         </div>
         <p class="movie--summary">${plotTruncated}</p>
@@ -90,36 +73,33 @@ function getMovieHtml(data) {
 }
 
 async function renderMoviesHtml() {
-  const movieIdArray = await getMovieIds();
   const totalHtml = [];
 
   main.innerHTML = `
     <h3 class="main--section__title">Loading...</h3>
     `;
 
-  for (let i = 0; i < movieIdArray.length; i++) {
-    totalHtml.push(await getMovieInfo(movieIdArray[i]));
+  for (let i = 0; i < savedIds.length; i++) {
+    totalHtml.push(await getMovieInfo(savedIds[i]));
   }
 
   if (totalHtml.length) {
     main.style.justifyContent = `flex-start`;
-    main.style.paddingTop = '63px';
+    main.style.paddingTop = '44px';
     main.innerHTML = totalHtml.join('');
   } else {
-    main.style.justifyContent = `center`;
-    main.style.paddingTop = '0';
     main.innerHTML = `
     <h3 class="main--section__title">
-      Unable to find what you’re looking for. Please try another search.
+      Your watchlist is looking a little empty...
     </h3>
+    <div class="main--section__reminder">
+      <img class="plus--icon" src="images/plus.png" />
+      <p class="main--reminder__text"
+        ><a href="index.html">Let’s add some movies!</a></p
+      >
+    </div>
     `;
   }
 }
 
-searchButton.addEventListener('click', renderMoviesHtml);
-search.addEventListener('keyup', function (event) {
-  if (event.key === 'Enter') {
-    event.preventDefault();
-    searchButton.click();
-  }
-});
+renderMoviesHtml();
