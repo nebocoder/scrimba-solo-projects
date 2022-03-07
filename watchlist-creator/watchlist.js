@@ -62,7 +62,7 @@ function getMovieHtml(data) {
           <p class="movie--length">${data.Runtime}</p>
           <p class="movie--genre">${genreTruncated}</p>
           <a href="javascript:;" class="watchlist">
-            <img class="plus--icon" src="images/minus.png" />
+            <img class="watchlist--icon" src="images/minus.png" />
             <p class="watchlist--action">Remove</p>
           </a>
         </div>
@@ -93,7 +93,7 @@ async function renderMoviesHtml() {
       Your watchlist is looking a little empty...
     </h3>
     <div class="main--section__reminder">
-      <img class="plus--icon" src="images/plus.png" />
+      <img class="watchlist--icon" src="images/plus.png" />
       <p class="main--reminder__text"
         ><a href="index.html">Let’s add some movies!</a></p
       >

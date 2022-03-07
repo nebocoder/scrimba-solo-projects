@@ -79,7 +79,7 @@ function getMovieHtml(data) {
           <p class="movie--length">${data.Runtime}</p>
           <p class="movie--genre">${genreTruncated}</p>
           <a href="javascript:;" class="watchlist">
-            <img class="plus--icon" src="images/plus.png" />
+            <img class="watchlist--icon" src="images/plus.png" />
             <p class="watchlist--action">Watchlist</p>
           </a>
         </div>
