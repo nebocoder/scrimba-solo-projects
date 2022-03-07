@@ -55,16 +55,18 @@ function getMovieHtml(data) {
           <a href="https://www.imdb.com/title/${data.imdbID}/" target="_blank">
             <h3>${titleTruncated} (${data.Year})</h3>
           </a>
-          <img src="images/star.png" />
-          <p>${data.imdbRating}</p>
+          <div class="movie--rating">
+            <img src="images/star.png" />
+            <p>${data.imdbRating}</p>
+          </div>
         </div>
         <div class="movie--extra">
           <p class="movie--length">${data.Runtime}</p>
           <p class="movie--genre">${genreTruncated}</p>
-          <a href="javascript:;" class="watchlist">
+          <div onclick="removeFromWatchlist('${data.imdbID}')" class="watchlist">
             <img class="watchlist--icon" src="images/minus.png" />
             <p class="watchlist--action">Remove</p>
-          </a>
+          </div>
         </div>
         <p class="movie--summary">${plotTruncated}</p>
       </div>
@@ -88,6 +90,8 @@ async function renderMoviesHtml() {
     main.style.paddingTop = '44px';
     main.innerHTML = totalHtml.join('');
   } else {
+    main.style.justifyContent = `center`;
+    main.style.paddingTop = '0';
     main.innerHTML = `
     <h3 class="main--section__title">
       Your watchlist is looking a little empty...
@@ -100,6 +104,12 @@ async function renderMoviesHtml() {
     </div>
     `;
   }
+}
+
+function removeFromWatchlist(imdbID) {
+  savedIds.splice(savedIds.indexOf(imdbID), 1);
+  localStorage.setItem('savedIds', JSON.stringify(savedIds));
+  renderMoviesHtml();
 }
 
 renderMoviesHtml();

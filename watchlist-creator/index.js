@@ -2,6 +2,8 @@ const search = document.querySelector('.search--section__input');
 const searchButton = document.querySelector('.search--section__button');
 const main = document.querySelector('.main--section');
 
+let savedIds = JSON.parse(localStorage.getItem('savedIds')) || [];
+
 async function getMovieIds() {
   const response = await fetch(
     `http://www.omdbapi.com/?apikey=${config.key}&s=${search.value}`
@@ -72,16 +74,18 @@ function getMovieHtml(data) {
           <a href="https://www.imdb.com/title/${data.imdbID}/" target="_blank">
             <h3>${titleTruncated} (${data.Year})</h3>
           </a>
-          <img src="images/star.png" />
-          <p>${data.imdbRating}</p>
+          <div class="movie--rating">
+            <img src="images/star.png" />
+            <p>${data.imdbRating}</p>
+          </div>
         </div>
         <div class="movie--extra">
           <p class="movie--length">${data.Runtime}</p>
           <p class="movie--genre">${genreTruncated}</p>
-          <a href="javascript:;" class="watchlist">
+          <div onclick="addToWatchlist('${data.imdbID}')" class="watchlist">
             <img class="watchlist--icon" src="images/plus.png" />
             <p class="watchlist--action">Watchlist</p>
-          </a>
+          </div>
         </div>
         <p class="movie--summary">${plotTruncated}</p>
       </div>
@@ -113,6 +117,13 @@ async function renderMoviesHtml() {
       Unable to find what you’re looking for. Please try another search.
     </h3>
     `;
+  }
+}
+
+function addToWatchlist(imdbID) {
+  if (!savedIds.includes(imdbID)) {
+    savedIds.push(imdbID);
+    localStorage.setItem('savedIds', JSON.stringify(savedIds));
   }
 }
 

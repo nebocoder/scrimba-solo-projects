@@ -225,14 +225,19 @@ body {
   margin-right: 8px;
 }
 
-.movie--title img {
+.movie--rating {
+  display: flex;
+}
+
+.movie--rating img {
   width: 15px;
   height: 15px;
   margin-right: 4px;
 }
 
-.movie--title p {
+.movie--rating p {
   font-size: 12px;
+  padding-top: 1px;
 }
 
 .movie--extra {
@@ -260,12 +265,12 @@ body {
 .watchlist {
   display: flex;
   align-items: center;
-  text-decoration: none;
+  cursor: pointer;
   transition: opacity 100ms;
 }
 
 .watchlist:hover {
-  opacity: 0.75;
+  opacity: 0.7;
 }
 
 .movie--summary {
