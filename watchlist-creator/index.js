@@ -51,7 +51,7 @@ function getMovieHtml(data) {
     plotTruncated = 'No movie summary available.';
   } else if (data.Plot.length > 125) {
     plotTruncated = `
-      ${data.Plot.substr(0, 125)}
+      ${data.Plot.substr(0, 125) + '...'}
       <a href="https://www.imdb.com/title/${data.imdbID}/" target="_blank">
         Read more
       </a>`;
@@ -62,6 +62,16 @@ function getMovieHtml(data) {
   const genreTruncated = `
     ${data.Genre.split(', ').slice(0, 3).join(', ')}
   `;
+
+  const watchlistElement = savedIds.includes(data.imdbID)
+    ? `<div onclick="removeFromWatchlist('${data.imdbID}')" class="watchlist">
+        <img class="watchlist--icon" src="images/minus.png" />
+        <p class="watchlist--action">Remove</p>
+      </div>`
+    : `<div onclick="addToWatchlist('${data.imdbID}')" class="watchlist">
+        <img class="watchlist--icon" src="images/plus.png" />
+        <p class="watchlist--action">Watchlist</p>
+      </div>`;
 
   return `
     <div class="movie--card">
@@ -82,10 +92,7 @@ function getMovieHtml(data) {
         <div class="movie--extra">
           <p class="movie--length">${data.Runtime}</p>
           <p class="movie--genre">${genreTruncated}</p>
-          <div onclick="addToWatchlist('${data.imdbID}')" class="watchlist">
-            <img class="watchlist--icon" src="images/plus.png" />
-            <p class="watchlist--action">Watchlist</p>
-          </div>
+          ${watchlistElement}
         </div>
         <p class="movie--summary">${plotTruncated}</p>
       </div>
@@ -125,6 +132,11 @@ function addToWatchlist(imdbID) {
     savedIds.push(imdbID);
     localStorage.setItem('savedIds', JSON.stringify(savedIds));
   }
+}
+
+function removeFromWatchlist(imdbID) {
+  savedIds.splice(savedIds.indexOf(imdbID), 1);
+  localStorage.setItem('savedIds', JSON.stringify(savedIds));
 }
 
 searchButton.addEventListener('click', renderMoviesHtml);
