@@ -64,13 +64,17 @@ function getMovieHtml(data) {
   `;
 
   const watchlistElement = savedIds.includes(data.imdbID)
-    ? `<div onclick="removeFromWatchlist('${data.imdbID}')" class="watchlist">
-        <img class="watchlist--icon" src="images/minus.png" />
-        <p class="watchlist--action">Remove</p>
+    ? `<div id="${data.imdbID}">
+        <div onclick="removeFromWatchlist('${data.imdbID}')" class="watchlist">
+          <img class="watchlist--icon" src="images/minus.png" />
+          <p class="watchlist--action">Remove</p>
+        </div>
       </div>`
-    : `<div onclick="addToWatchlist('${data.imdbID}')" class="watchlist">
-        <img class="watchlist--icon" src="images/plus.png" />
-        <p class="watchlist--action">Watchlist</p>
+    : `<div id="${data.imdbID}" class="watchlist">
+        <div onclick="addToWatchlist('${data.imdbID}')" class="watchlist">
+          <img class="watchlist--icon" src="images/plus.png" />
+          <p class="watchlist--action">Watchlist</p>
+        </div>
       </div>`;
 
   return `
@@ -131,12 +135,24 @@ function addToWatchlist(imdbID) {
   if (!savedIds.includes(imdbID)) {
     savedIds.push(imdbID);
     localStorage.setItem('savedIds', JSON.stringify(savedIds));
+    document.getElementById(imdbID).innerHTML = `
+      <div onclick="removeFromWatchlist('${imdbID}')" class="watchlist">
+        <img class="watchlist--icon" src="images/minus.png" />
+        <p class="watchlist--action">Remove</p>
+      </div>
+    `;
   }
 }
 
 function removeFromWatchlist(imdbID) {
   savedIds.splice(savedIds.indexOf(imdbID), 1);
   localStorage.setItem('savedIds', JSON.stringify(savedIds));
+  document.getElementById(imdbID).innerHTML = `
+    <div onclick="addToWatchlist('${imdbID}')" class="watchlist">
+      <img class="watchlist--icon" src="images/plus.png" />
+      <p class="watchlist--action">Watchlist</p>
+    </div>
+  `;
 }
 
 searchButton.addEventListener('click', renderMoviesHtml);
