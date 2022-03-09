@@ -8,7 +8,39 @@
     <title>Invoice Creator</title>
   </head>
   <body>
-    <h1>Invoice Creator</h1>
+    <header class="header--section">
+      <h1 class="header--section__title">Invoice creator</h1>
+      <p class="header--section__subtitle">
+        Thanks for choosing GoodCorp, LLC!
+      </p>
+    </header>
+
+    <main class="main--section">
+      <div class="main--section__buttons">
+        <div class="button main--section__button">Wash Car: $10</div>
+        <div class="button main--section__button">Mow Lawn: $20</div>
+        <div class="button main--section__button">Pull Weeds: $30</div>
+      </div>
+      <div class="main--section__list">
+        <div class="main--section__header">
+          <h3 class="main--section__title">Task</h3>
+          <h3 class="main--section__title">Total</h3>
+        </div>
+      </div>
+      <div class="main--section__total">
+        <div class="main--section__header">
+          <h3 class="main--section__title">Task</h3>
+          <h3 class="main--section__title">Total amount</h3>
+        </div>
+        <div class="main--section__total">
+          <h1 class="main--total__price">$0</h1>
+        </div>
+      </div>
+      <div class="button main--send__button" id="send-button">
+        <img src="images/mail.png" />
+        <p>Send invoice</p>
+      </div>
+    </main>
 
     <script src="index.js"></script>
   </body>
