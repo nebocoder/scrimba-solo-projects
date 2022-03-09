@@ -4,43 +4,50 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="index.css" />
     <title>Invoice Creator</title>
   </head>
   <body>
-    <header class="header--section">
-      <h1 class="header--section__title">Invoice creator</h1>
-      <p class="header--section__subtitle">
-        Thanks for choosing GoodCorp, LLC!
-      </p>
-    </header>
-
-    <main class="main--section">
-      <div class="main--section__buttons">
-        <div class="button main--section__button">Wash Car: $10</div>
-        <div class="button main--section__button">Mow Lawn: $20</div>
-        <div class="button main--section__button">Pull Weeds: $30</div>
-      </div>
-      <div class="main--section__list">
-        <div class="main--section__header">
-          <h3 class="main--section__title">Task</h3>
-          <h3 class="main--section__title">Total</h3>
+    <div class="container">
+      <header class="header--section">
+        <h1 class="header--section__title">Invoice creator</h1>
+        <p class="header--section__subtitle">
+          Thanks for choosing GoodCorp, LLC!
+        </p>
+      </header>
+      <main class="main--section">
+        <div class="main--section__buttons">
+          <div class="button main--section__button">Wash Car: $10</div>
+          <div class="button main--section__button">Mow Lawn: $20</div>
+          <div class="button main--section__button">Pull Weeds: $30</div>
         </div>
-      </div>
-      <div class="main--section__total">
-        <div class="main--section__header">
-          <h3 class="main--section__title">Task</h3>
-          <h3 class="main--section__title">Total amount</h3>
+        <div class="main--section__list">
+          <div class="main--section__header">
+            <h3 class="main--section__title">Task</h3>
+            <h3 class="main--section__title">Total</h3>
+          </div>
         </div>
         <div class="main--section__total">
-          <h1 class="main--total__price">$0</h1>
+          <div class="main--section__header">
+            <h3 class="main--section__title">Task</h3>
+            <h3 class="main--section__title">Total amount</h3>
+          </div>
+          <div class="main--section__price">
+            <h1 class="main--total__price">$0</h1>
+          </div>
         </div>
-      </div>
-      <div class="button main--send__button" id="send-button">
-        <img src="images/mail.png" />
-        <p>Send invoice</p>
-      </div>
-    </main>
+        <div class="button main--send__button" id="send-button">
+          <img src="images/mail.png" />
+          Send invoice
+        </div>
+      </main>
+    </div>
 
     <script src="index.js"></script>
   </body>
