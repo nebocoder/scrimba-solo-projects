@@ -16,12 +16,22 @@ function render() {
   totalPrice.textContent = currentServices.length ? getTotalPrice() : '$0';
 }
 
+function removeItem(name) {
+  let nameArray = currentServices.map((service) => service.name);
+  currentServices.splice(nameArray.indexOf(name), 1);
+  render();
+}
+
 function getListHtml() {
   return currentServices
     .map((service) => {
       return `
       <li class="service--item">
-        <p>${service.name}</p>
+        <p>${service.name} 
+          <span class="remove" onclick="removeItem('${service.name}')">
+            Remove
+          </span>
+        </p>
         <div class="price">
           <span class="dollar-sign">$</span>
           ${service.price}

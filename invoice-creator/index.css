@@ -130,10 +130,17 @@ body {
 }
 
 .remove {
+  position: fixed;
+  margin-left: 15px;
   font-weight: 400;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 20px;
   color: #d5d4d8;
+}
+
+.remove:hover {
+  cursor: pointer;
+  color: #f53f3f;
 }
 
 .price {
