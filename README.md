@@ -2,6 +2,11 @@
 
 A place to post solo projects that don't warrant their own repository.
 
+List of projects:
+- [Unit Converter](#unit-converter)
+- [Password Generator](#password-generator)
+- [Invoice Creator](#invoice-creator)
+
 ## Unit Converter
 
 Design: ![Figma design file](https://www.figma.com/file/AdqUVRQCZGP1zRcEvzmJTm/Unit-Conversion)
