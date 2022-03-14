@@ -17,3 +17,11 @@ Design: ![Figma design file](https://www.figma.com/file/YRO9Iw5IYaOorjnRyNz4bV/R
 Screenshot:
 
 ![password-generator](https://user-images.githubusercontent.com/91620216/158235238-6148ca2c-d67a-4431-a6e0-dc0171ef5916.png)
+
+## Invoice Creator
+
+Design: ![Figma design file](https://www.figma.com/file/roUn8DT7zHTI9tcL2JXNZG/Invoice-Generator)
+
+Screenshot:
+
+![invoice-creator](https://user-images.githubusercontent.com/91620216/158236855-25485ea7-8319-4942-bd78-81c62bc87098.png)
