@@ -7,6 +7,7 @@ List of projects:
 - [Password Generator](#password-generator)
 - [Invoice Creator](#invoice-creator)
 - [Color Scheme Generator](#color-scheme-generator)
+- [Watchlist Creator](#watchlist-creator)
 
 ## Unit Converter
 
@@ -39,3 +40,11 @@ Design: ![Figma design file](https://www.figma.com/file/twasy8Bca4hW7gunLFSLoY/C
 Screenshot:
 
 ![color-scheme-generator](https://user-images.githubusercontent.com/91620216/158437007-4d87d65c-dca4-436c-85cd-2e42e83c80ae.png)
+
+## Watchlist Creator
+
+Design: ![Figma design file](https://www.figma.com/file/jhFRdFIdHpRxsDznNXtpXw/Watchlist-Creator)
+
+Screenshot:
+
+![watchlist-creator](https://user-images.githubusercontent.com/91620216/158437324-a26c2dd5-eef4-43d8-b785-6a1d4889fc78.png)
