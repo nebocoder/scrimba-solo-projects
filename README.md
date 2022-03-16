@@ -11,7 +11,7 @@ List of projects:
 
 ## Unit Converter
 
-Design: ![Figma design file](https://www.figma.com/file/AdqUVRQCZGP1zRcEvzmJTm/Unit-Conversion)
+Design: [Figma design file](https://www.figma.com/file/AdqUVRQCZGP1zRcEvzmJTm/Unit-Conversion)
 
 Screenshot:
 
@@ -19,7 +19,7 @@ Screenshot:
 
 ## Password Generator
 
-Design: ![Figma design file](https://www.figma.com/file/YRO9Iw5IYaOorjnRyNz4bV/Random-Password-Generator)
+Design: [Figma design file](https://www.figma.com/file/YRO9Iw5IYaOorjnRyNz4bV/Random-Password-Generator)
 
 Screenshot:
 
@@ -27,7 +27,7 @@ Screenshot:
 
 ## Invoice Creator
 
-Design: ![Figma design file](https://www.figma.com/file/roUn8DT7zHTI9tcL2JXNZG/Invoice-Generator)
+Design: [Figma design file](https://www.figma.com/file/roUn8DT7zHTI9tcL2JXNZG/Invoice-Generator)
 
 Screenshot:
 
@@ -35,7 +35,7 @@ Screenshot:
 
 ## Color Scheme Generator
 
-Design: ![Figma design file](https://www.figma.com/file/twasy8Bca4hW7gunLFSLoY/Color-Picker)
+Design: [Figma design file](https://www.figma.com/file/twasy8Bca4hW7gunLFSLoY/Color-Picker)
 
 Screenshot:
 
@@ -43,7 +43,7 @@ Screenshot:
 
 ## Watchlist Creator
 
-Design: ![Figma design file](https://www.figma.com/file/jhFRdFIdHpRxsDznNXtpXw/Watchlist-Creator)
+Design: [Figma design file](https://www.figma.com/file/jhFRdFIdHpRxsDznNXtpXw/Watchlist-Creator)
 
 Screenshot:
 
